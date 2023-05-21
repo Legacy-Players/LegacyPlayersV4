@@ -1,6 +1,6 @@
 SERVER="mail.turtle-archives.online:587"
 FROM="legacy@turtle-archives.online"
-TO="peersmurf@gmail.com"
+TO="jesse.lautenbach@outlook.com"
 SUBJ="Some subject"
 MESSAGE="Some message"
 CHARSET="utf-8"
