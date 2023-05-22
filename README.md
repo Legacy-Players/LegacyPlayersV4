@@ -1,64 +1,35 @@
-[![codecov](https://codecov.io/gh/Geigerkind/LegacyPlayersV3/branch/master/graph/badge.svg)](https://codecov.io/gh/Geigerkind/LegacyPlayersV3)
-[![codecov](https://codecov.io/gh/Geigerkind/LegacyPlayersV3/branch/dev/graph/badge.svg)](https://codecov.io/gh/Geigerkind/LegacyPlayersV3)
+# LegacyPlayers Reboot
+[![docker-compose-actions-workflow](https://github.com/YamaYAML/LegacyPlayersV4/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/YamaYAML/LegacyPlayersV4/actions/workflows/build.yml)
 
-## LegacyPlayers v3
-LegacyPlayers is a community driven project to establish a platform where people
-playing on all kind of expansions of World of Warcraft can share raid logs, PvP logs
-and armory data. It aims to persist all data of all coming and going private servers,
-as well as to provide easy access to them.
+Welcome to the next iteration of LegacyPlayers, the beloved hub for sharing World of Warcraft experiences. Our new home is [https://legacyplayers.info/](https://legacyplayers.info/).
 
-The project started 2016 as LegacyLogs, which was the website counterpart to show logs 
-collected by the in-game addon [DPSMate](https://github.com/Geigerkind/DPSMate).
-This solution gained popularity really fast
-and proved to not scale very well. At the same time, RealmPlayers, the competing
-project at this time, came to an end. Dilatazu and me initially decided to merge these two
-projects, where LegacyPlayers was born on the 21.03.2017. Unfortunately, did Dilatazu
-leave the team rather early in the development phase. [LegacyPlayers](https://github.com/Geigerkind/Legacyplayers)
-is a huge success harboring Vanilla, TBC and WOTLK PvE and PvP logs as well as a stable armory.
-However, also this architecture proved to not scale well and many bugs were introduced due
-to it. Now it is at a point were it is hard to maintain and to add new wanted features.
-This is why LegacyPlayers V3 was born. It is a complete rewrite and remodel of the
-architecture and aims to scale to thousands of visitors. 
+This project is a reboot of [LegacyPlayersV3](https://github.com/Geigerkind/LegacyPlayersV3) by Geigerkind, designed to resolve the scalability issues encountered by previous iterations and ensuring a smoother, richer experience for users.
 
-The goal is to unite the Legacy-WoW community in this hub and persist all the memories
-of raids, characters and PvP as well as to provide useful tools.
+## Special Thanks
 
-## Licence
-* LegacyPlayersV3 is licensed under the AGPLv3 license for all open source applications. 
-* Anyone can host your own version of LegacyPlayers
-* Any form of monetization is not allowed through the site
-* Any changes that improve existing code must be fed back into the main repo and shared with everyone
+Special thanks to the original project, LegacyPlayersV3, for laying the foundation of this work, and [Turtle WoW](https://turtle-wow.org/) for their continuous support and inspiration.
+
+## License
+
+LegacyPlayers is open-source and licensed under the MIT license. Users are free to host their own versions with the following conditions:
+
+- No monetization through the site is allowed.
+- Any improvements to the existing code must be contributed back to the main repository.
 
 ## Deployment
-1. Install **docker** and **docker-compose**
-2. run `docker-compose up -d`
-3. Website is now available under port 80
-4. For integration into your custom environment, changes must be made to the environment
+
+Docker and Docker-compose are required for deployment. After installation, run `docker-compose up -d` to launch the website on port 80. Please note that the database in the repository serves only as an example.
 
 ## Performance
-* A big bottleneck is the database container currently. You should tune the configurations of the database. See the deployment folder for a comparable configuration that was used on the official site.
-* The backend may be resource starved depending on your docker configuration. It eats lots of RAM :)
+
+Tuning the database configurations is advised to alleviate the current performance bottlenecks. The backend might also require a significant amount of RAM.
 
 ## Existing Bugs
-There are a lot of existing bugs. Many raids are not parsed correctly in all cases. 
-The parsers are a big part that could be improved. The ModelViewer is currently not integrated. 
-It could be integrated easily but you have to fetch the resources yourself as I can't host them. 
-Scripts are provided in the respecti folder.
 
-# Development
-## Installation
-1. Install **docker**, **docker-compose**, **rustup**
-2. Using rustup, install the **nightly** toolchain and set it to default
-3. Make sure that no service is running on the following ports: 3306, 443, 80, 25, 4200 and 8000
+Several bugs are currently present, including incorrect parsing of some raids. Also, the ModelViewer is yet to be integrated. If you wish to do so, you must fetch the necessary resources independently.
 
-### GNU/Linux
-4. Go into the Environment directory and start it using `docker-compose up`. (If you want to run it as daemon, append -d)
-5. Go into the Backend directory and start the server using `cargo run`
-6. Go into the Webclient directory and install packages `npm ci`
-7. Start the webclient using `npm run start`
+## Development
 
-### Windows/Mac
-4. Go into the Environment directory and start it using `docker-compose -f docker-compose.mac_windows.yml up`. (If you want to run it as daemon, append -d)
-5. Go into the Backend directory and start the server using `ROCKET_ENV=stage cargo run`
-6. Go into the Webclient directory and install packages `npm ci`
-7. Start the webclient using `npm run start:mac`/`npm run start:windows` in the **Git shell or some other bash**
+For contributing to the development of the project, please follow the installation instructions as described in the original text. We encourage contributions from everyone who loves World of Warcraft as much as we do!
+
+Join us in enhancing LegacyPlayers and preserving the rich history of WoW!
