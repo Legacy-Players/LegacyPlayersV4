@@ -2,5 +2,5 @@
 Description=DB Backup Service
 
 [Service]
-ExecStart=/bin/bash /root/LegacyPlayersV3/Deploy/backup_db.sh
+ExecStart=/bin/bash /opt/LegacyPlayersV4/Deploy/backup_db.sh
 User=root

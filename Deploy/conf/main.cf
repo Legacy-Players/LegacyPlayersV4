@@ -1,4 +1,4 @@
-mydomain = legacyplayers.info
+mydomain = turtle-archives.online
 
 smtpd_banner = $myhostname ESMTP $mail_name
 biff = no

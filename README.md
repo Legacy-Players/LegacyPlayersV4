@@ -7,7 +7,7 @@ This project is a reboot of [LegacyPlayersV3](https://github.com/Geigerkind/Lega
 
 ## Special Thanks
 
-Special thanks to the original project, LegacyPlayersV3, for laying the foundation of this work, and [Turtle WoW](https://turtle-wow.org/) for their continuous support and inspiration.
+Special thanks to the original project, LegacyPlayersV3, for laying the foundation of this work. Also to the [Turtle WoW](https://turtle-wow.org/) project for their continuous support and inspiration.
 
 ## License
 
