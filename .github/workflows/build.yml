@@ -1,5 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-
 name: CI
 
 # Controls when the workflow will run
@@ -26,10 +25,10 @@ jobs:
       - name: Get latest code from main branch
         uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script to test self-hosted runner
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Build the project with no cache
         run: docker-compose build --no-cache
+
+      # Runs a set of commands using the runners shell
+      - name: Check if build succeeded
+        run: ls dist/
