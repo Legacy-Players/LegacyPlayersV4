@@ -724,7 +724,7 @@ function RPLL:fix_combat_log_strings()
     VSPARRYSELFOTHER = player_name .. " attacks. %s parries."
     VSRESISTOTHERSELF = "%s attacks. " .. player_name .. " resists all the damage."
     VSRESISTSELFOTHER = player_name .. " attacks. %s resists all the damage."
-    DURABILITYDAMAGE_DEATH = player_name .. " 's equipped items suffer a 10\% durability loss."
+    DURABILITYDAMAGE_DEATH = player_name .. " 's equipped items suffer a 10%% durability loss."
     AURAADDEDOTHERHELPFUL = "%s gains %s (1)."
     AURAADDEDOTHERHARMFUL = "%s is afflicted by %s (1)."
 
