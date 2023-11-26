@@ -637,6 +637,7 @@ function RPLL:fix_combat_log_strings()
     SPELLDEFLECTEDOTHERSELF = "%s" .. " 's %s was deflected by " .. player_name .. "."
     SPELLDEFLECTEDSELFOTHER = player_name .. " 's %s was deflected by %s."
     SPELLDEFLECTEDSELFSELF = player_name .. " 's %s was deflected by " .. player_name .. "."
+    SPELLDISMISSPETOTHER = "%s 's %s is dismissed."
     SPELLDISMISSPETSELF = player_name .. " 's %s is dismissed."
     SPELLDODGEDOTHERSELF = "%s" .. " 's %s was dodged by " .. player_name .. "."
     SPELLDODGEDSELFOTHER = player_name .. " 's %s was dodged by %s."
