@@ -79,13 +79,13 @@ fn get_item_stats(data: &Data, expansion_id: u8, item: &Option<CharacterItem>, s
         item_effect_vec.iter().for_each(|item_effect| merge_character_stat_vec(&mut stats, data.parse_stats(expansion_id, item_effect.spell_id)));
     }
 
-   // Stats from enchantments
-   if let Some(enchant_id) = item.enchant_id {
+    // Stats from enchantments
+    if let Some(enchant_id) = item.enchant_id {
     if let Some(enchant) = data.get_enchant(expansion_id, enchant_id) {
         merge_character_stat_vec(&mut stats, enchant.stats);
     } else {
-        // for when data.get_enchant returns None (likely unknown enchant, not sure yet)
-        println!("Error: Enchant not found for enchant_id {}", enchant_id); 
+        // for when data.get_enchant returns None 
+        println!("Error: Enchant not found for enchant_id {}", enchant_id);
     }
 }
 
