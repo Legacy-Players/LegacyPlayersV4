@@ -8,9 +8,9 @@ services:
     - ./Database/patches:/docker-entrypoint-initdb.d
     - rpll_mariadb:/var/lib/mysql
     environment:
-    - MYSQL_USER=mysql
+    - MYSQL_USER=root
     - MYSQL_PASSWORD=vagrant
-    - MYSQL_ROOT_PASSWORD=Arabin32
+    - MYSQL_ROOT_PASSWORD=vagrant
     - TZ=Europe/Amsterdam
   backend:
     depends_on:
@@ -24,7 +24,7 @@ services:
     - MYSQL_URL=mysql://root:vagrant@mariadb/main
     - ROCKET_DATABASES={main={url="mysql://root:vagrant@mariadb/main"}}
     - SMTP_DNS=127.0.0.1:25
-    - HOST=legacyplayers.info
+    - HOST=legacyplayers.com
     - MODEL_GENERATOR=http://localhost:5555
     - INSTANCE_STORAGE_PATH=/Storage
   webclient:
@@ -36,7 +36,17 @@ services:
     networks:
     - rpll
     ports:
-    - '80:80'
+    - '1234:80'
+#  traefik:
+#    image: traefik:latest
+#    command: --api.insecure=true --providers.docker
+#    networks:
+#    - rpll
+#    ports:
+#      - 443:443
+#      - 8081:8081
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
   rpll_mariadb:

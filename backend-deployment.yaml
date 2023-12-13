@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: backend
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/rpll: "true"
+        io.kompose.service: backend
+    spec:
+      containers:
+        - env:
+            - name: HOST
+              value: legacyplayers.com
+            - name: INSTANCE_STORAGE_PATH
+              value: /Storage
+            - name: MODEL_GENERATOR
+              value: http://localhost:5555
+            - name: MYSQL_URL
+              value: mysql://root:vagrant@mariadb/main
+            - name: ROCKET_DATABASES
+              value: '{main={url="mysql://root:vagrant@mariadb/main"}}'
+            - name: SMTP_DNS
+              value: 127.0.0.1:25
+          image: backend
+          name: backend
+          resources: {}
+          volumeMounts:
+            - mountPath: /Storage
+              name: rpll-backend-storage
+      restartPolicy: Always
+      volumes:
+        - name: rpll-backend-storage
+          persistentVolumeClaim:
+            claimName: rpll-backend-storage
+status: {}

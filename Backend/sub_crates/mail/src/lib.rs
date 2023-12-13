@@ -17,7 +17,7 @@ pub fn send(recipient: &str, username: &str, subject: String, text: String, test
 
     dotenv().ok();
 
-    let email = EmailBuilder::new().to((recipient, username)).from("mail@legacyplayers.info").subject(subject).text(text).build().unwrap().into();
+    let email = EmailBuilder::new().to((recipient, username)).from("mail@legacyplayers.com").subject(subject).text(text).build().unwrap().into();
 
     let mut mailer = SmtpClient::new(env::var("SMTP_DNS").unwrap(), ClientSecurity::None).unwrap().transport();
     let result = mailer.send(email);

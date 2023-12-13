@@ -22,7 +22,7 @@ impl SiteMap for Utility {
             .skip(((page - 1) as usize) * NUM_PER_PAGE).take(NUM_PER_PAGE)
             .for_each(|(_, character)| {
                 result_str.push("<url>".to_owned());
-                result_str.push(format!("<loc>{}</loc>", format!("https://legacyplayers.info/armory/character/{}/{}",
+                result_str.push(format!("<loc>{}</loc>", format!("https://legacyplayers.com/armory/character/{}/{}",
                                                                  urlencoding::encode(&data.get_server(character.server_id).unwrap().name),
                                                                  urlencoding::encode(&character.last_update.as_ref().unwrap().character_name))
                     .replace("&", "&amp;").replace("'", "&apos;")
@@ -44,7 +44,7 @@ impl SiteMap for Utility {
         guilds.iter().skip(((page - 1) as usize) * NUM_PER_PAGE).take(NUM_PER_PAGE)
             .for_each(|(_, guild)| {
                 result_str.push("<url>".to_owned());
-                result_str.push(format!("<loc>{}</loc>", format!("https://legacyplayers.info/armory/guild/{}/{}",
+                result_str.push(format!("<loc>{}</loc>", format!("https://legacyplayers.com/armory/guild/{}/{}",
                                                                  urlencoding::encode(&data.get_server(guild.server_id).unwrap().name),
                                                                  urlencoding::encode(&guild.name))
                     .replace("&", "&amp;").replace("'", "&apos;")
@@ -64,7 +64,7 @@ impl SiteMap for Utility {
         addon_pastes.iter().skip(((page - 1) as usize) * NUM_PER_PAGE).take(NUM_PER_PAGE)
             .for_each(|(_, paste)| {
                 result_str.push("<url>".to_owned());
-                result_str.push(format!("<loc>{}</loc>", format!("https://legacyplayers.info/tools/addon_pastebin/viewer/{}", paste.id)
+                result_str.push(format!("<loc>{}</loc>", format!("https://legacyplayers.com/tools/addon_pastebin/viewer/{}", paste.id)
                     .replace("&", "&amp;").replace("'", "&apos;")
                     .replace("\"", "&quot;").replace("<", "&lt;").replace(">", "&gt;")));
                 result_str.push("</url>".to_owned());

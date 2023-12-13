@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
     company: "LegacyPlayers",
-    legacyplayersLink: "https://legacyplayers.info",
+    legacyplayersLink: "https://legacyplayers.com",
     githubLink: "Geigerkind/LegacyPlayersV3"
 };

@@ -1,7 +1,7 @@
 # LegacyPlayers Reboot
 [![docker-compose-actions-workflow](https://github.com/YamaYAML/LegacyPlayersV4/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/YamaYAML/LegacyPlayersV4/actions/workflows/build.yml)
 
-Welcome to the next iteration of LegacyPlayers, the beloved hub for sharing World of Warcraft experiences. Our new home is [https://legacyplayers.info/](https://legacyplayers.com/).
+Welcome to the next iteration of LegacyPlayers, the beloved hub for sharing World of Warcraft experiences. Our new home is [https://legacyplayers.com/](https://legacyplayers.com/).
 
 This project is a reboot of [LegacyPlayersV3](https://github.com/Geigerkind/LegacyPlayersV3) by Geigerkind, designed to resolve the scalability issues encountered by previous iterations and ensuring a smoother, richer experience for users.
 
