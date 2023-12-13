@@ -81,8 +81,12 @@ fn get_item_stats(data: &Data, expansion_id: u8, item: &Option<CharacterItem>, s
 
     // Stats from enchantments
     if let Some(enchant_id) = item.enchant_id {
-        let enchant = data.get_enchant(expansion_id, enchant_id).unwrap();
-        merge_character_stat_vec(&mut stats, enchant.stats);
+        if let Some(enchant) = data.get_enchant(expansion_id, enchant_id) {
+            merge_character_stat_vec(&mut stats, enchant.stats);
+        } else {
+            // for when data.get_enchant returns None 
+            println!("Error: Enchant not found for enchant_id {}", enchant_id);
+        }
     }
 
     // Stats from gems
