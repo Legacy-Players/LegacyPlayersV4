@@ -1041,7 +1041,7 @@ impl CombatLogParser for WoWVanillaParser {
                     "shaman" => 7,
                     "mage" => 8,
                     "warlock" => 9,
-                    "Druid" => 11,
+                    "druid" => 11,
                     _ => return None,
                 });
             }
