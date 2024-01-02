@@ -31,7 +31,7 @@
         "538": "Invalid Format of the start time!",
         "539": "Invalid Format of the end time!",
         "599": "An unknown error occurred!",
-        "mail_confirm": "A confirmation mail has been send to you!",
+        "mail_confirm": "All set! There will be no e-mail verification.",
         "reset_mail_confirm": "A mail has been send to the specified address!"
     },
     "General": {
@@ -237,7 +237,7 @@
             "nickname": "Nickname",
             "mail": "Email",
             "mail_confirmed": "Confirmation status",
-            "resend_mail": "Resend confirmation mail",
+            "resend_mail": "Confirmation not necessary",
             "default_privacy": "Default log privacy"
         },
         "updatePassword": {
@@ -309,7 +309,7 @@
         "typeMail": "Your email address"
     },
     "Confirm": {
-        "wait": "Validating..."
+        "wait": "E-mail confirmation is not necessary."
     },
     "Table": {
         "total": "{{amount}} total"
@@ -317,7 +317,7 @@
     "Contribute": {
         "Project": {
             "title": "Contribute as a private server project",
-            "description": "LegacyPlayers v3 makes private server projects first class data providers. Using LP's RestAPI a private key, armory and raid data can be inserted, modified and deleted. This way you are in full control of the data you provide through LegacyPlayers. If you don't want to bother coding your own exporter, you can use LP's open-source exporter which is easy to configure and provides you with a number of features:",
+            "description": "LegacyPlayers v4 makes private server projects their own first class data providers. Using LP's RestAPI a private key, armory and raid data can be inserted, modified and deleted. This way you are in full control of the data you provide through LegacyPlayers. If you don't want to bother coding your own exporter, you can use LP's open-source exporter which is easy to configure and provides you with a number of features:",
             "advantages": {
                 "0": "1. Your players have fine grained control about their data on LegacyPlayers: give/withdraw consent, modifying/deleting data and choose in a fine grained way which data is uploaded.",
                 "1": "2. The exporter is a configurable docker container which is easy to install.",
@@ -334,26 +334,26 @@
                 "5": "6. Player use a familiar interface and can access their character data from anywhere."
             },
             "disadvantages": "There are really no disadvantages to this deal. If you choose to provide the data directly then you are in full control of it. If you don't, players can freely upload any data from your server to the site, regardless of validity. This has worked well in the past, but it has its obvious flaws. So take the leashes in your own hands instead.",
-            "contact": "If you are interested please contact Shino#3990 on Discord! (Links are in the footer)"
+            "contact": "If you are interested please contact Niralthas via Discord! (Links are in the footer)"
         },
         "Individual": {
-            "title": "Contribute as an individual",
-            "description": "You can currently only upload for Vanilla, TBC, WOTLK and Retail Classic. If you want to upload to a non listed server, please contact Shino!",
-            "description2": "Please select the correct server, start time, end time in the upload form and upload a zip of your WoWCombatLog.txt.",
-            "description3": "Vanilla (1.12), TBC (2.4.3) and WOTLK (3.3.5a) ONLY (English client only): You need to install an AddOn: 'AdvancedCombatLog' (see below). Please note that this addon writes meta information into your spell failed combat log messages. Therefore you need to spam your spells. Caster should spam their spells without a target every now and then (can be done during trash phases for example) to produce a sufficient amount of meta information.",
-            "description4": "For Vanilla: This macro may help you '/script for i=1, 100 do CastSpellByName(\"Fireball\"); end' (Replace Fireball with one of your spells); Make sure that no Hunter named its pet after an instance NPC. If someone does it, consider kicking him from your guild.",
-            "description5": "Note for TBC and WOTLK: The addon overwrites your SPELL_FAILED UI error messages. Therefore, you will no longer see them in your UI."
+            "title": "Contribute as a player",
+            "description": "We currently support Vanilla, Classic, TBC and WoTLK and Turtle WoW logs. Want to get your realm listed? Contact Niralthas via Discord (see footer).",
+            "description2": "You can upload an archived version of your WoWCombatLog.log via the upload form following the steps below to get your raids listed.",
+            "description3": "This platform relies on an addon, namely 'AdvancedCombatLog' (see below). Please note that this addon writes meta information into your spell failed combat log messages. Therefore you need to spam your spells. Caster should spam their spells without a target every now and then (can be done during trash phases for example) to produce a sufficient amount of meta information.",
+            "description4": "In case of Vanilla clients, this macro may be of help to generate these messages: '/script for i=1, 100 do CastSpellByName(\"Fireball\"); end' (Replace Fireball with one of your spells); Make sure that no Hunter named its pet after an instance NPC. If someone does it, consider kicking him from your guild.",
+            "description5": "For TBC and WoTLK this is not necessary."
         },
         "Guide": {
-            "title": "Step by step guide to contribue",
-            "step1": "1. Create an account and log into the account. (Accounts from the old version dont work)",
+            "title": "How to contribute",
+            "step1": "1. Log in to your Legacy Players account, sign-up if you haven´t already.",
             "step2": "2. Install the AddOn for your respective expansion, listed above.",
             "step3": "3. Let everyone else install the Helper AddOn to improve the accuracy.",
-            "step4": "4. Prior to the raid, delete the WoWCombatLog.txt.",
-            "step5": "5. Log in and collect a raid, the addon will start collecting automatically.",
-            "step6": "6. Log out after the raid, otherwise the log may be lost.",
-            "step7": "7. Zip the WoWCombatLog.txt, e.g. using 7zip. Please note that rar is not zip.",
-            "step8": "8. Upload it on the upload page: ",
+            "step4": "4. Prior to the raid, delete the WoWCombatLog.txt file in ./Logs/.",
+            "step5": "5. Log in when beginning your raid, the addon will start collecting automatically.",
+            "step6": "6. Log out after the raid to ensure data integrity.",
+            "step7": "7. Zip the WoWCombatLog.txt, 7-Zip or any archive manager.",
+            "step8": "8. While being logged in, select Upload under Contribute in the menu.",
             "step9": "9. Make sure that you select the correct server.",
             "step10": "10. After the log has been uploaded, it can take up to a minute until it is shown in the raid list. Additionally, you can find your uploads in your account panel."
         }

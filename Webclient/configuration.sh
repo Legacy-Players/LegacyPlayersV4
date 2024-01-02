@@ -4,30 +4,30 @@
 # Note for manifest icons: If you provide more than the 512 logo version, then adjust it yourself in the manifest_template.json
 
 # Important escape "/"
-WEBCLIENT_COMPANY_NAME="LegacyPlayers"
-WEBCLIENT_WEBSITE_NAME="LegacyPlayers"
+WEBCLIENT_COMPANY_NAME="Legacy Players"
+WEBCLIENT_WEBSITE_NAME="Legacy Players"
 WEBCLIENT_WEBSITE_SHORT_NAME="LP"
 WEBCLIENT_WEBSITE_DOMAIN="legacyplayers.com"
 WEBCLIENT_WEBSITE_NOSCRIPT_MESSAGE="This website requires JavaScript to be enabled!"
 WEBCLIENT_WEBSITE_SEARCH_URL="search?q="
 WEBCLIENT_WEBSITE_SEARCH_VARIABLE="search_term_string"
-WEBCLIENT_GITHUB_URL="Geigerkind\/LegacyPlayersV3"
-WEBCLIENT_DISCORD_INVITE="JMQrrqy"
+WEBCLIENT_GITHUB_URL="YamaYAML\/LegacyPlayersV4"
+WEBCLIENT_DISCORD_INVITE="g3QQVaEpK7"
 
 WEBCLIENT_OWNER_ADDRESS="Kiebitzhagen 5"
 WEBCLIENT_OWNER_CITY="21217 Seevetal"
 WEBCLIENT_OWNER_COUNTRY="Germany"
 WEBCLIENT_OWNER_PHONE="+49 176 61869410"
-WEBCLIENT_OWNER_MAIL="legacy@turtle-archives.online"
+WEBCLIENT_OWNER_MAIL="info@legacyplayers.com"
 
-WEBCLIENT_RESPONSIBLE_PERSON="Tom Dymel"
+WEBCLIENT_RESPONSIBLE_PERSON="Jesse (Niralthas)"
 WEBCLIENT_IMAGE_SOURCES="<a href=\"https\:\/\/fontawesome.com\/license\" target=\"_blank\">Font Awesome<\/a><br \/>Blizzard Entertainment Inc"
 
-WEBCLIENT_META_KEYWORDS="WoW raid logs armory pvp metrics"
+WEBCLIENT_META_KEYWORDS="WoW raid logs armory pvp metrics pve ranking"
 WEBCLIENT_META_DESCRIPTION="LegacyPlayers is a community driven project to establish a platform where people playing on all kind of expansions of World of Warcraft can share raid logs, PvP logs and armory data. It aims to persist all data of all coming and going private servers, as well as to provide easy access to them."
-WEBCLIENT_META_THEME_COLOR="#893101"
+WEBCLIENT_META_THEME_COLOR="#045469"
 
-WEBCLIENT_GOOGLE_ANALYTICS_TOKEN="UA-107735472-1"
+WEBCLIENT_GOOGLE_ANALYTICS_TOKEN="G-8GDZZC91S1"
 
 WEBCLIENT_MANIFEST_START_URL="\\/"
 
