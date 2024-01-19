@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        os: [linux]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+
+      - name: Get latest source from main
+        run: git pull origin main
+
+      - name: Build Docker containers
+        run: docker-compose -f /root/LegacyPlayersv4/docker-compose.yml build --no-cache
+
+      - name: Start Docker containers
+        run: docker-compose -f /root/LegacyPlayersv4/docker-compose.yml up -d
+
+      - name: Check if all containers are up
+        run: docker-compose -f /root/LegacyPlayersv4/docker-compose.yml ps
+
+      - name: Cleanup
+        run: docker-compose -f /root/LegacyPlayersv4/docker-compose.yml down
+
+    if: runner.labels contains 'non-prod'
