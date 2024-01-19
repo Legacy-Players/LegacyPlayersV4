@@ -9,10 +9,8 @@ import {SettingsService} from "../../../../service/settings";
 export class NavigationBarComponent implements OnInit {
     itemsArmory = [
         ["/armory/", "NavigationBar.armory.title"],
-        /*
-        ["/armory/items/", "NavigationBar.armory.items"],
-        ["/armory/guilds/", "NavigationBar.armory.guilds"],
-         */
+//        ["/armory/items/", "NavigationBar.armory.items"],
+//        ["/armory/guilds/", "NavigationBar.armory.guilds"],
     ];
 
     itemsPvE = [
@@ -20,10 +18,8 @@ export class NavigationBarComponent implements OnInit {
         ["/pve/ranking/", "NavigationBar.pve.ranking"],
         ["/pve/speed_run/", "NavigationBar.pve.speed_run"],
         ["/pve/speed_kill/", "NavigationBar.pve.speed_kill"],
-        /*
-        ["/raids/bosses/", "NavigationBar.raids.bosses"],
-        ["/raids/loot/", "NavigationBar.raids.loot"],
-        */
+//        ["/raids/bosses/", "NavigationBar.raids.bosses"],
+//      ["/raids/loot/", "NavigationBar.raids.loot"],
     ];
 
     itemsPvP = [

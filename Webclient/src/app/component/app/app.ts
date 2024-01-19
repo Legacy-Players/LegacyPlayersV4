@@ -71,10 +71,10 @@ export class AppComponent implements OnInit, OnChanges {
             return;
         }*/
 
-        gtag("config", "UA-107735472-1");
+        gtag("config", "G-88RX038GXX");
         this.googleAnalyticsSubscription = this.router.events.subscribe(event => {
             if (event instanceof NavigationEnd && (window as any).ga) {
-                (window as any).ga("create", "UA-107735472-1", "auto");
+                (window as any).ga("create", "G-88RX038GXX", "auto");
                 (window as any).ga("set", "anonymizeIp", true);
                 (window as any).ga("set", "allowAdFeatures", false);
                 (window as any).ga("set", "page", event.urlAfterRedirects);

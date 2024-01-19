@@ -692,7 +692,7 @@ function RPLL:fix_combat_log_strings()
     SPELLREFLECTSELFOTHER = player_name .. " 's %s is reflected back by %s."
     SPELLREFLECTSELFSELF = player_name .. " 's %s is reflected back by " .. player_name .. "."
     SPELLRESISTOTHERSELF = "%s" .. " 's %s was resisted by " .. player_name .. "."
-    SPELLRESISTSELFOTHER = player_name .. " 's %s was resisted by " .. player_name .. "."
+    SPELLRESISTSELFOTHER = player_name .. " 's %s was resisted by %s."
     SPELLRESISTSELFSELF = player_name .. " 's %s was resisted by " .. player_name .. "."
     SPELLSPLITDAMAGEOTHERSELF = "%s" .. " 's %s causes " .. player_name .. " %d damage."
     SPELLSPLITDAMAGESELFOTHER = player_name .. " 's %s causes %s %d damage."

@@ -4,9 +4,9 @@
         fill-rule="evenodd"></path>
 </svg>
 <div (click)="handleClose()" id="logo" routerLink="/"></div>
-<!--
-<input type="search" id="search" [placeholder]="'NavigationBar.searchPlaceHolder' | translate" />
--->
+
+<!-- <input type="search" id="search" [placeholder]="'NavigationBar.searchPlaceHolder' | translate" /> -->
+
 
 <div [class.open]="show_item_list" id="itemListContainer">
     <ItemList (closeMenu)="handleClose()" [items]="itemsArmory"></ItemList>
