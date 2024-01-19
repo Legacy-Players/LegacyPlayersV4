@@ -1,18 +1,18 @@
-name: Docker Image CI
-
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+  push:
+    branches:
+      - master
+      - "releases/*"
 
 jobs:
-
-  build:
-
-    runs-on: self-hosted
-
+  tests:
+    name: "Integration testing"
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v3
+      - name: "Set up environment"
+        run: docker compose -f docker-compose.yml up -d --wait
+      - name: "Wait for docker to finish building"
+      - name: "Test server"
+        run: docker exec -it legacyplayersv4_webclient_1 echo "Test" > /var/www/test.html 
