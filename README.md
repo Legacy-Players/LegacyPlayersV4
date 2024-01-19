@@ -1,3 +1,5 @@
+[![CI](https://github.com/Legacy-Players/LegacyPlayersV4/actions/workflows/build.yml/badge.svg?branch=main&event=status)](https://github.com/Legacy-Players/LegacyPlayersV4/actions/workflows/build.yml)
+
 # Legacy Players: A Community-Driven World of Warcraft Data Platform
 
 Welcome to Legacy Players, the collaborative project tailored for programmers within the World of Warcraft community. Initiated in 2022 by the Turtle WoW Team, Legacy Players is a platform designed to facilitate the sharing and analysis of raid logs, PvP logs, and armory data across various expansion packs. As developers, you play a crucial role in preserving the rich gaming history and performance insights.
