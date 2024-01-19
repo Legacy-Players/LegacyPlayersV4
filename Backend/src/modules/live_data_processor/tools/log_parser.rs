@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 use std::collections::{BTreeSet, HashMap, VecDeque};
 
-use chrono::{Datelike, NaiveDateTime};
+use chrono::{Datelike, NaiveDateTime, Utc, Duration};
 
 use crate::modules::armory::Armory;
 use crate::modules::armory::tools::{GetCharacter, SetCharacter};
@@ -26,7 +26,18 @@ pub fn parse_cbl(parser: &mut impl CombatLogParser, live_data_processor: &LiveDa
             continue;
         }
         if let Ok(timestamp) = NaiveDateTime::parse_from_str(&format!("{}/{}", current_year, meta[0]), "%Y/%m/%d %H:%M:%S%.3f") {
-            let event_timestamp = timestamp.timestamp_millis() as u64;
+            let current_timestamp = Utc::now().naive_utc();
+            let event_timestamp: u64;
+            // wer're gonna have a 24 hour grace period for logs in the future to avoid timezone issues
+            let future_timestamp = current_timestamp + Duration::hours(24);
+            if timestamp > future_timestamp {
+                let last_year = timestamp - Duration::days(365);
+                println!("{}", last_year);
+                event_timestamp = last_year.timestamp_millis() as u64;
+            }
+            else {
+            event_timestamp = timestamp.timestamp_millis() as u64;
+            }
             /*
             if event_timestamp < start_parse || event_timestamp > end_parse {
                 continue;
