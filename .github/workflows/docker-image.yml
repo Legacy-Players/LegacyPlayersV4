@@ -1,3 +1,4 @@
+name: "CI"
 on:
   pull_request:
   push:
@@ -14,5 +15,7 @@ jobs:
       - name: "Set up environment"
         run: docker compose -f docker-compose.yml up -d --wait
       - name: "Wait for docker to finish building"
+        run: docker-compose up -d
       - name: "Test server"
-        run: docker exec -it legacyplayersv4_webclient_1 echo "Test" > /var/www/test.html 
+        run: docker ps
+
