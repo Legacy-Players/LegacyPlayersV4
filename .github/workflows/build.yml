@@ -1,0 +1,46 @@
+# This is a basic workflow to help you get started with Actions
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Get latest code from main branch
+        uses: actions/checkout@v3
+
+      - name: Build docker bundle
+        # You may pin to the exact commit or the version.
+        # uses: adrielcodeco/docker-compose-run-action@279848890d86008050ed55bba6a8cffad6668a3f
+        uses: adrielcodeco/docker-compose-run-action@v1
+        with:
+          # relative path to compose file(s)
+          compose-file: # optional, default is ./docker-compose.yml
+          # additional options to pass to `docker-compose` command
+          compose-flags: build --no-cache
+          
+      - name: Deploy to Dev
+        # You may pin to the exact commit or the version.
+        # uses: adrielcodeco/docker-compose-run-action@279848890d86008050ed55bba6a8cffad6668a3f
+        uses: adrielcodeco/docker-compose-run-action@v1
+        with:
+          # relative path to compose file(s)
+          compose-file: # optional, default is ./docker-compose.yml
+          # additional options to pass to `docker-compose` command
+          compose-flags: up -d --build     
