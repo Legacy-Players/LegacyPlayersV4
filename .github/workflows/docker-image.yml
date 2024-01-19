@@ -11,11 +11,12 @@ jobs:
     name: "Integration testing"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: "Set up environment"
-        run: "Building"
+        uses: actions/checkout@v3
+      - name: "Building"
+        run: docker-compose build --no-cache
       - name: "Waiting for docker to finish building"
-        run: docker compose -f docker-compose.yml up -d --wait
+        run: docker-compose -f docker-compose.yml up -d --wait
       - name: "Starting docker"
         run: docker-compose up -d
       - name: "Test server"
