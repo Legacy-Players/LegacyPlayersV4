@@ -9,7 +9,7 @@ on:
 jobs:
   tests:
     name: "Building source"
-    runs-on: self-host
+    runs-on: self-hosted
     steps:
       - name: "Get latest source"
         uses: actions/checkout@v3
