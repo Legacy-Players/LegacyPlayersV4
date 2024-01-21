@@ -11,6 +11,8 @@ jobs:
     name: "Building source"
     runs-on: self-hosted
     steps:
+      - name: "Retrieving dependencies"
+        run: apt install docker docker-compose -y
       - name: "Get latest source"
         uses: actions/checkout@v3
       - name: "Building (cane take a while)"
