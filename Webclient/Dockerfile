@@ -1,7 +1,9 @@
 FROM nginx:1.23
 
 RUN apt update
-RUN apt install -y npm unzip
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \ 
+    && apt install -y nodejs
+RUN apt install -y unzip
 
 RUN mkdir /Webclient
 COPY ./src /Webclient/src
@@ -22,7 +24,7 @@ COPY ./Addons /Webclient/Addons
 COPY ./*.zip /Webclient/
 
 WORKDIR /Webclient
-RUN npm ci
+RUN npm ci && echo N | npm run ng analytics off
 RUN npm run build
 
 RUN mkdir -p /var/www
