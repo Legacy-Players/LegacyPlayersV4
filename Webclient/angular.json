@@ -68,6 +68,14 @@
                                     "maximumError": "10kb"
                                 }
                             ]
+                        },
+                        "development": {
+                            "optimization": false,
+                            "outputHashing": "bundles",
+                            "sourceMap": true,
+                            "extractLicenses": true,
+                            "buildOptimizer": false,
+                            "budgets": []
                         }
                     }
                 },

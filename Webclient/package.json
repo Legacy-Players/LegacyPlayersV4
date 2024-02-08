@@ -18,7 +18,8 @@
     "prelint": "bash tools/prepare.sh",
     "prelint:mac": "bash tools/prepare.sh",
     "prelint:windows": "bash tools/prepare.sh",
-    "build": "ng build --configuration=production --build-optimizer",
+    "build": "ng build --configuration=production",
+    "builddev": "ng build --configuration=development",
     "postbuild": "bash tools/minifyHtml.sh && bash tools/inlineGlobalStyles.sh",
     "test": "jest",
     "lint": "ng lint"

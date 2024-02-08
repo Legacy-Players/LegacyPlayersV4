@@ -1,11 +1,11 @@
 FROM nginx:1.23
 
-RUN apt update
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \ 
-    && apt install -y nodejs
-RUN apt install -y unzip
+RUN apt update \
+    &&  curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \ 
+    && apt install -y nodejs \
+    && apt install -y unzip \
+    && mkdir /Webclient
 
-RUN mkdir /Webclient
 COPY ./src /Webclient/src
 COPY ./tools /Webclient/tools
 COPY ./.browserslistrc /Webclient/.browserslistrc
