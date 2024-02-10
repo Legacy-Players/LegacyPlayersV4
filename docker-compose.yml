@@ -28,7 +28,10 @@ services:
     - MODEL_GENERATOR=http://localhost:5555
     - INSTANCE_STORAGE_PATH=/Storage
   webclient:
-    build: ./Webclient
+    build:
+      context: ./Webclient
+      args:
+        build_type: production
     networks:
     - rpll
   reverse-proxy:

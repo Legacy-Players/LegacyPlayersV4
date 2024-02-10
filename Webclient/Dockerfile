@@ -1,10 +1,11 @@
 FROM nginx:1.23
 
 RUN apt update \
-    &&  curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \ 
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt install -y nodejs \
     && apt install -y unzip \
-    && mkdir /Webclient
+    && mkdir /Webclient \
+    && mkdir -p /var/www
 
 COPY ./src /Webclient/src
 COPY ./tools /Webclient/tools
@@ -23,12 +24,18 @@ COPY ./tslint.json /Webclient/tslint.json
 COPY ./Addons /Webclient/Addons
 COPY ./*.zip /Webclient/
 
+
 WORKDIR /Webclient
 RUN npm ci && echo N | npm run ng analytics off
-RUN npm run build
 
-RUN mkdir -p /var/www
-RUN cp -r dist/Webclient/* /var/www/
+ARG build_type
+RUN <<EOF bash
+    if [[ "$build_type" == "development" ]]; then
+        npm run builddev
+    else
+        npm run build
+    fi
+EOF
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-
+RUN cp -r dist/Webclient/* /var/www/

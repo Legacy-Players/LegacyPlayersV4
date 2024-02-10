@@ -1,0 +1,22 @@
+version: '3.6'
+services:
+  webclient:
+    extends:
+      file: docker-compose.yml
+      service: webclient
+    build:
+      args:
+        build_type: development
+    volumes:
+      - type: bind
+        source: Webclient/package.json
+        target: /Webclient/package.json
+      - type: bind
+        source: Webclient/package-lock.json
+        target: /Webclient/package-lock.json
+      - type: bind
+        source: Webclient/src
+        target: /Webclient/src
+      - type: bind
+        source: Webclient/node_modules
+        target: /Webclient/node_modules
