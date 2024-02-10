@@ -22,14 +22,13 @@
                  [allowSearchFilter]="true"></MultiSelect>
     <div class="question_mark" [showTooltip]="tooltip">?</div>
 </div>
-<div class="graph_container" *ngIf="this.chartDataSets.length > 0">
+<div class="graph_container" *ngIf="this.chartDatasets.length > 0">
     <canvas
         id="graph_cont"
         baseChart
-        [datasets]="chartDataSets"
+        [datasets]="chartDatasets"
         [labels]="chartLabels"
         [options]="chartOptions"
-        [colors]="chartColors"
         chartType="line"
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)">

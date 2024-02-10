@@ -73,8 +73,7 @@ export function createTranslateLoader(http: HttpClient) {
         Meta,
         Title
     ],
-    bootstrap: [AppComponent],
-    entryComponents: [CookieBannerComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
