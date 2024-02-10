@@ -622,7 +622,7 @@ function RPLL:fix_combat_log_strings()
     PROCRESISTOTHERSELF = player_name .. " resists %s" .. " 's %s."
     PROCRESISTSELFOTHER = "%s resists " .. player_name .. " 's %s."
     PROCRESISTSELFSELF = player_name .. " resists " .. player_name .. " 's %s."
-    SELFKILLOTHER = player_name .. " slays %s!"
+    SELFKILLOTHER = "%s is slain by " .. player_name .."!"
     SIMPLECASTOTHERSELF = "%s casts %s on " .. player_name .. "."
     SIMPLECASTSELFOTHER = player_name .. " casts %s on %s."
     SIMPLECASTSELFSELF = player_name .. " casts %s on " .. player_name .. "."
