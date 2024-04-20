@@ -3,7 +3,7 @@ FROM nginx:1.23
 RUN apt update \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt install -y nodejs \
-    && apt install -y unzip \
+    && apt install -y unzip zip \
     && mkdir /Webclient \
     && mkdir -p /var/www
 
@@ -22,14 +22,13 @@ COPY ./tsconfig.spec.json /Webclient/tsconfig.spec.json
 COPY ./tsconfig.worker.json /Webclient/tsconfig.worker.json
 COPY ./tslint.json /Webclient/tslint.json
 COPY ./Addons /Webclient/Addons
-COPY ./*.zip /Webclient/
-
 
 WORKDIR /Webclient
 RUN npm ci && echo N | npm run ng analytics off
 
 ARG build_type
 RUN <<EOF bash
+    set -euxo pipefail
     if [[ "$build_type" == "development" ]]; then
         npm run builddev
     else
@@ -39,3 +38,16 @@ EOF
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 RUN cp -r dist/Webclient/* /var/www/
+
+COPY --from=addonscombatlog ./ /Webclient/Addonscombatlog
+RUN <<'EOF' bash
+    set -euxo pipefail
+    for name in Addonscombatlog/*; do
+        if [ ! -d "$name" ]; then
+            continue;
+        fi
+        echo $name
+        base=$(basename "$name")
+        zip -r /var/www/"$base".zip $name
+    done
+EOF

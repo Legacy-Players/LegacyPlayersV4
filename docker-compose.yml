@@ -30,6 +30,8 @@ services:
   webclient:
     build:
       context: ./Webclient
+      additional_contexts:
+        addonscombatlog: ./Addons
       args:
         build_type: production
     networks:
