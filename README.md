@@ -25,7 +25,7 @@ Certainly! Legacy Players encourages programmers to expand the platform's reach.
 We welcome your inquiries, comments, or contributions. Engage with us through our Discord channel:
 
 - Official Website: [Legacy Players](https://legacyplayers.com/)
-- GitHub: [LegacyPlayersV4](https://github.com/YamaYAML/LegacyPlayersV4/)
+- GitHub: [LegacyPlayersV4](https://github.com/Legacy-Players/LegacyPlayersV4)
 - Discord Support: Turtle WoW Discord -> #legacy-players
 
 Connect with us in English and let's continue advancing the Legacy-WoW community together!
