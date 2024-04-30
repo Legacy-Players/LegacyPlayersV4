@@ -33,7 +33,7 @@ services:
       additional_contexts:
         addonscombatlog: ./Addons
       args:
-        build_type: development
+        build_type: production
     networks:
     - rpll
   reverse-proxy:
