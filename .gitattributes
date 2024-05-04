@@ -9,4 +9,5 @@ text=auto
 *.js text eol=lf
 *.xml text eol=lf
 *.svg text eol=lf
+Dockerfile text eol=lf
 working-tree-encoding=utf-8

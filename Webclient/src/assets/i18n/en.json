@@ -341,8 +341,9 @@
             "description": "We currently support Vanilla, Classic, TBC and WoTLK and Turtle WoW logs. Want to get your realm listed? Contact Niralthas via Discord (see footer).",
             "description2": "You can upload an archived version of your WoWCombatLog.log via the upload form following the steps below to get your raids listed.",
             "description3": "This platform relies on an addon, namely 'AdvancedCombatLog' (see below). Please note that this addon writes meta information into your spell failed combat log messages. Therefore you need to spam your spells. Caster should spam their spells without a target every now and then (can be done during trash phases for example) to produce a sufficient amount of meta information.",
-            "description4": "In case of Vanilla clients, this macro may be of help to generate these messages: '/script for i=1, 100 do CastSpellByName(\"Fireball\"); end' (Replace Fireball with one of your spells); Make sure that no Hunter named its pet after an instance NPC. If someone does it, consider kicking him from your guild.",
-            "description5": "For TBC and WoTLK this is not necessary."
+            "description4": "If using a Vanilla client, this macro may be of help to generate these messages: '/script for i=1, 100 do CastSpellByName(\"Fireball\"); end' (Replace Fireball with one of your spells); Make sure that no Hunter named its pet after an instance NPC. If someone does it, consider kicking him from your guild.",
+            "description5": "If uploading on TurtleWoW there has been work on client modifications that allow writing to the combat log without having to use spell failed messages.  See the following for more information:",
+            "description6": "For TBC and WoTLK this is not necessary."
         },
         "Guide": {
             "title": "How to contribute",
