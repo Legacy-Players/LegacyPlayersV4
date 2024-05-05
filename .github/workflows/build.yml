@@ -1,4 +1,4 @@
-name: Build and deploy to dev environment
+name: Build
 
 # Controls when the workflow will run
 on:
@@ -9,7 +9,7 @@ on:
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch: Build and deploy to dev environment
+  workflow_dispatch: build
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
